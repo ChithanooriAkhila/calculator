@@ -1,0 +1,59 @@
+<html>
+<body>
+<style>
+table,button,input{
+    height: 100%;
+    width: 100%;
+    font-size: 25px;
+}
+</style>
+
+<table>
+    <tr>
+        <td colspan=4><center>CALCULATOR</center></td>
+    </tr>
+    <tr>
+        <td colspan=3><input type=text id="display"></td>
+        <td><button>Clear</button></td>
+    </tr>
+    <tr>
+        <td><button>1</button></td>
+        <td><button>2</button></td>
+        <td><button>3</button></td>
+        <td><button>/</button></td>
+    </tr>
+    <tr>
+        <td><button>4</button></td>
+        <td><button>5</button></td>
+        <td><button>6</button></td>
+        <td><button>*</button></td>
+    </tr>
+    <tr>
+        <td><button>7</button></td>
+        <td><button>8</button></td>
+        <td><button>9</button></td>
+        <td><button>-</button></td>
+    </tr>
+    <tr>
+        <td><button>.</button></td>
+        <td><button>0</button></td>
+        <td><button>=</button></td>
+        <td><button>+</button></td>
+    </tr>
+</table>
+
+<script src="jquery.js"></script>
+
+<script type="text/javascript">
+    $('button').click(function(){
+        if($(this).html()=='='){
+            $('#display').val(eval($('#display').val()));
+        }else if ($(this).html()=='Clear'){
+            $('#display').val('');
+        }else{
+            $('#display').val($('#display').val() + $(this).html());
+        }
+    });
+</script>
+</body>
+</html>
